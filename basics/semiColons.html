@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
-  <head></head>
+  <head>Exercise#1: code to demonstrate what can happen in the absence of semi-colons</head></br>
   <body>
+    -------------------------------------------------------------------------------------------------</br>
     <h3>METHOD#1:</h3>
     if (n < 10) {</br></br>
     &nbsp;&nbsp;return n * 2;</br></br>
@@ -31,7 +32,7 @@
       console.log("method1(3): " + method1(3));
 
     </script>
-    --------------------------------------------------</br>
+    -------------------------------------------------------------------------------------------------</br>
     <h3>METHOD#2:</h3>
     if (n < 10) {</br></br>
     &nbsp;&nbsp;return n * 2 // with no semi-colon, but still all on one line. Javascript engine puts the semi-colon at the end of this statement, hence it returns 6.</br></br>
@@ -61,7 +62,7 @@
       console.log("method2(3): " + method2(3));
 
     </script>
-    --------------------------------------------------</br>
+    -------------------------------------------------------------------------------------------------</br>
     <h3>METHOD#3:</h3>
     if (n < 10) {</br></br>
     &nbsp;&nbsp;return  // here there is no semi-colon. The rest of the statement is on the next line. </br>
@@ -93,7 +94,7 @@
       console.log("method3(3): " + method3(3));
 
     </script>
-    --------------------------------------------------</br>
+    -------------------------------------------------------------------------------------------------</br>
     <h3>METHOD#4:</h3>
     if (n < 10) {</br></br>
     &nbsp;&nbsp;return n * // again there is no semi-colon. The rest of the statement is on the next line. </br>
