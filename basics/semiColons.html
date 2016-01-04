@@ -4,10 +4,12 @@
   <body>
     -------------------------------------------------------------------------------------------------</br>
     <h3>METHOD#1:</h3>
-    if (n < 10) {</br></br>
-    &nbsp;&nbsp;return n * 2;</br></br>
-    } else {</br></br>
-      &nbsp;&nbsp;return n;</br></br>
+    var method1 = function(n) {</br></br>
+    &nbsp;&nbsp;if (n < 10) {</br></br>
+    &nbsp;&nbsp;&nbsp;&nbsp;return n * 2;</br></br>
+    &nbsp;&nbsp;} else {</br></br>
+    &nbsp;&nbsp;&nbsp;&nbsp;return n;</br></br>
+    &nbsp;&nbsp;}</br></br>
     }</br></br>
     console.log(method1(14)) gives 14</br>
     console.log(method1(3)) gives 6</br></br>
@@ -34,10 +36,12 @@
     </script>
     -------------------------------------------------------------------------------------------------</br>
     <h3>METHOD#2:</h3>
-    if (n < 10) {</br></br>
-    &nbsp;&nbsp;return n * 2 // with no semi-colon, but still all on one line. Javascript engine puts the semi-colon at the end of this statement, hence it returns 6.</br></br>
-    } else {</br></br>
-      &nbsp;&nbsp;return n;</br></br>
+    var method2 = function(n) {</br></br>
+    &nbsp;&nbsp;if (n < 10) {</br></br>
+    &nbsp;&nbsp;&nbsp;&nbsp;return n * 2 // with no semi-colon, but still all on one line. Javascript engine puts the semi-colon at the end of this statement, hence it returns 6.</br></br>
+    &nbsp;&nbsp;} else {</br></br>
+      &nbsp;&nbsp;&nbsp;&nbsp;return n;</br></br>
+    &nbsp;&nbsp;}</br></br>
     }</br></br>
     console.log(method2(14)) gives 14</br>
     console.log(method2(3)) gives 6</br></br>
@@ -64,11 +68,14 @@
     </script>
     -------------------------------------------------------------------------------------------------</br>
     <h3>METHOD#3:</h3>
-    if (n < 10) {</br></br>
-    &nbsp;&nbsp;return  // here there is no semi-colon. The rest of the statement is on the next line. </br>
-    &nbsp;&nbsp;&nbsp;n * 2 // Because this expression suffices as a complete statement in its own right, Javascript engine puts a semi-colon at the end of the line above, hence it returns undefined.</br></br>
-    } else {</br></br>
-      &nbsp;&nbsp;return n;</br></br>
+    var method3 = function(n) {</br></br>
+    &nbsp;&nbsp;if (n < 10) {</br></br>
+    &nbsp;&nbsp;&nbsp;&nbsp;return  // here there is no semi-colon. The rest of the statement is on the next line.</br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;n * 2 // Because this expression suffices as a complete statement in its own right,</br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//Javascript engine puts a semi-colon at the end of the line above, hence it returns undefined.</br></br>
+    &nbsp;&nbsp;} else {</br></br>
+      &nbsp;&nbsp;&nbsp;&nbsp;return n;</br></br>
+    &nbsp;&nbsp;}</br></br>
     }</br></br>
     console.log(method3(14)) gives 14</br>
     console.log(method3(3)) gives undefined</br></br>
@@ -96,11 +103,13 @@
     </script>
     -------------------------------------------------------------------------------------------------</br>
     <h3>METHOD#4:</h3>
-    if (n < 10) {</br></br>
-    &nbsp;&nbsp;return n * // again there is no semi-colon. The rest of the statement is on the next line. </br>
-    &nbsp;&nbsp;&nbsp;2 // This time because the expression on line above is incomplete, Javascript engine does not put a semi-colon at the end of the line above, hence it returns 6.</br></br>
-    } else {</br></br>
-      &nbsp;&nbsp;return n;</br></br>
+    var method4 = function(n) {</br></br>
+    &nbsp;&nbsp;if (n < 10) {</br></br>
+    &nbsp;&nbsp;&nbsp;&nbsp;return n * // again there is no semi-colon. The rest of the statement is on the next line. </br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// This time because the expression on line above is incomplete, Javascript engine does not put a semi-colon at the end of the line above, hence it returns 6.</br></br>
+    &nbsp;&nbsp;} else {</br></br>
+      &nbsp;&nbsp;&nbsp;&nbsp;return n;</br></br>
+    &nbsp;&nbsp;}</br></br>
     }</br></br>
     console.log(method4(14)) gives 14</br>
     console.log(method4(3)) gives undefined</br></br>
