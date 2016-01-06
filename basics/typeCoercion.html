@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>Exercise#3: Type coercion</head></br>
+  <body>
+    -------------------------------------------------------------------------------------------------</br>
+    console.log("1" == 1);// gives true</br></br>
+    console.log(1 == "1.0");// gives true</br></br>
+    console.log("1" == "1.0");// gives false</br></br>
+    // Problem with this is that the double equals, ==, performs type conversion (prior to comparison)
+
+    <script>
+
+    console.log("1" == 1);
+    console.log(1 == "1.0");
+    console.log("1" == "1.0");
+
+    </script>
+    -------------------------------------------------------------------------------------------------</br>
+    console.log("1" === 1);// gives false</br></br>
+    console.log(1 === "1.0");// gives false</br></br>
+    console.log("1" === "1.0");// gives false</br></br>
+    // Triple equals, ===, compares types as well as values. Always aim to use this instead of == to avoid generating bugs.
+
+    <script>
+
+    console.log("1" === 1);
+    console.log(1 === "1.0");
+    console.log("1" === "1.0");
+
+    </script>
+
+  </body>
+</html>
