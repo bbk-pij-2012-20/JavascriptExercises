@@ -1,8 +1,8 @@
-Basics of Javascript
+Basics of Javascript:
 --
 
-Semi-colons
--
+<h3>Semi-colons</h3>
+
 Javascript will add in missing semi-colons at the end of a statement but will add a semi-colon prematurely if the statement is broken up and continued on the next line and if the latter part of the statement (on the next line) constitutes a complete statement by itself.
 
 Local and global variables
