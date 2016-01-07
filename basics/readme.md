@@ -17,7 +17,7 @@ The use of === does not allow coercion, instead comparing the data types and val
 
 <h3>Dynamically-typed:</h3>
 
-Refers to when type-checking is performed. Dynamically-typed (as opposed to statically-typed) does the type checking at run time.
+Refers to the point at which data type-checking is performed. Dynamically-typed does the type checking at run time. (This is in contrast to statically-typed languages (like C) which do all their type-checking at compile-time.)
 
 <h3>Weakly-typed:</h3>
 
