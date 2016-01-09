@@ -11,20 +11,26 @@ A variable that is declared inside a method will be local if it is preceded by a
 
 <h3>Type coercion:</h3>
 
-Refers to implicit data type conversion which is done when using double equals, ==
+Refers to the implicit type conversion which is done when using double equals, == (the coercion is done in Javascript at run-time).
 
 The use of === does not allow coercion, instead comparing the data types and values as they are.
 
 <h3>Dynamically-typed:</h3>
 
-Refers to the point at which data type-checking is performed. Dynamically-typed does the type checking at run time. (This is in contrast to statically-typed languages (like C) which do all their type-checking at compile-time.)
+Refers to the point at which type-checking is performed. A dynamically-typed language like Javascript does the type-checking at run-time. (This is in contrast to statically-typed languages (like C) which do all their type-checking at compile-time.)
+A dynamically-typed language like Javascript is also sometimes described as being 'untyped'. Untyped essentially means that the language only has one type (it tags values at runtime and has different behaviour based on the tags). It also means that the language does not have any static types.
 
 <h3>Weakly-typed:</h3>
 
-Is a poorly-defined description of how strict the language is with allowing type conversions.
+Is a poorly-defined description of how strictly a language permits type conversions, relative to other languages. Javascript is relatively Weakly-typed, for example:
 
 <h3>Object creation:</h3>
 
+Is a very straightforward process in Javascript. Objects in Javascript are hashmaps, and have a JSON format.
+Note that functions are objects, hence the syntax for declaring a function is the same as creating an object.
+
 <h3>Class creation:</h3>
+
+Class creation is also very straightforward. It has the same appearance as creating a function, except that the variable name must start with a capital letter.
 
 <h3>Examining properties:</h3>
