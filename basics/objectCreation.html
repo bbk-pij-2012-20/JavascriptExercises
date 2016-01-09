@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>Exercise#6: Object creation</head></br>
+  <body>
+    -------------------------------------------------------------------------------------------------</br>
+    <h4>Creating example object: a person with name and age attributes</h4></br>
+    var person = {</br></br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;age : 54,</br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name : "Brendan Eich"</br></br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};</br></br></br>
+    console.log(person.age);&nbsp;&nbsp;&nbsp;&nbsp;// gives the age</br>
+    console.log(person.name);&nbsp;&nbsp;&nbsp;&nbsp;// gives the name</br>
+    person.playsFootball());&nbsp;&nbsp;&nbsp;&nbsp;// calls person's function playsFootball()</br>
+
+    <script>
+
+      var person = {
+
+                      age : 54,
+                      name : "Brendan Eich",
+                      playsFootball : function() {
+
+                          console.log("...playing football...");
+
+                      }
+
+                  };
+
+      console.log("person's age is " + person.age);
+      console.log("person's name is " + person.name);
+      console.log("person is");
+      person.playsFootball();
+
+    </script>
+
+  </body>
+</html>
