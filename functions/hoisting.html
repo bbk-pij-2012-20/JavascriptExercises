@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+  <head>Functions exercise#1: hoisting</head></br>
+  <body>
+    -------------------------------------------------------------------------------------------------</br>
+    <h4>Example#1: hoisting</h4>
+
+    function nutella(n){</br></br>
+
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log("Nutella has nuts numbering " + n);</br></br>
+
+    };</br></br>
+
+    nutella(10);&nbsp;//not as expected, gives the console.log() output of the 2nd function definition (below)</br></br>
+
+    function nutella(n){</br></br>
+
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log("...but Nutella now has nuts numbering " + n);</br></br>
+
+    };</br></br>
+
+    nutella(20);&nbsp;//as expected, gives the console.log() output of the 2nd function definition</br></br>
+
+    <script>
+
+      function nutella(n){
+
+      console.log("Nutella has nuts numbering " + n);
+
+      };
+
+      nutella(10);
+
+      function nutella(n){
+
+          console.log("...but Nutella now has nuts numbering " + n);
+
+      };
+
+      nutella(20);
+
+    </script>
+    -------------------------------------------------------------------------------------------------</br>
+    <h4>Example#2: no hoisting with preferred syntax</h4>
+
+      var nutella = function(n){</br></br>
+
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log("Nutella has nuts numbering " + n);</br></br>
+
+      };</br></br>
+
+      nutella(10);&nbsp;//as expected, gives the console.log() output of the 1st function definition (above)</br></br>
+
+      nutella = function(n){</br></br>
+
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log("...but Nutella now has nuts numbering " + n);</br></br>
+
+      };</br></br>
+
+      nutella(10);&nbsp;//as expected, gives the console.log() output of the 2nd function definition</br></br>
+
+    <script>
+
+      var nutella = function(n) {
+
+          console.log("Nutella has nuts numbering " + n);
+
+      };
+
+      nutella(10);
+
+      nutella = function(n) {
+
+          console.log("...but Nutella now has nuts numbering " + n);
+
+      };
+
+      nutella(20);
+
+    </script>
+    -------------------------------------------------------------------------------------------------</br>
+    <h4>Example#3: same as #2 but more verbose - redundant duplicate function names</h4>
+
+    var nutella = function nutella(n){</br></br>
+
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log("Nutella has nuts numbering " + n);</br></br>
+
+    };</br></br>
+
+    nutella(10);&nbsp;//as expected, gives the console.log() output of the 1st function definition (above)</br></br>
+
+    nutella = function nutella(n){</br></br>
+
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log("...but Nutella now has nuts numbering " + n);</br></br>
+
+    };</br></br>
+
+    nutella(10);&nbsp;//as expected, gives the console.log() output of the 2nd function definition</br></br>
+
+    <script>
+
+      var nutella = function nutella(n) {
+
+          console.log("Nutella has nuts numbering " + n);
+
+      };
+
+      nutella(10);
+
+      nutella = function nutella(n) {
+
+          console.log("...but Nutella now has nuts numbering " + n);
+
+      };
+
+      nutella(20);
+
+    </script>
+
+  </body>
+</html>
