@@ -17,6 +17,6 @@ subsequent function can leave out the var: doSometing = function() {..}
 It is possible to also write var doSomething = function doSomething() {..}, but there's no point
 and the second doSomething is redundant.
 
-<h4>Arguments do not have to match numbers of parameters</h4>
+<h4>number of arguments != numbers of parameters</h4>
 
 ..
