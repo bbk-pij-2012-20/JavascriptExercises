@@ -21,6 +21,25 @@
 
     The reason for this semantic similarity is that you do not create classes in Javascript, but rather you create a constructor.
     The fact that the syntax of a class declaration (as shown above) should be the same as for a function declaration makes sense by virtue of the fact that a constructor is a form of function.
+
+    <script>
+
+      var Bike = function(){
+
+        console.log("...calling the class Bike...");
+
+      }
+
+      var bike = function(){
+
+        console.log("...calling the function bike()...");
+
+      }
+
+      bike();
+      Bike();
+
+    </script>
     -------------------------------------------------------------------------------------------------</br>
     <h4>Creating a class, part 2:</h4>
     <h4>use of keyword new</h4>
