@@ -17,8 +17,7 @@ The use of === does not allow coercion, instead comparing the data types and val
 
 <h3>Object creation:</h3>
 
-Is a very straightforward process in Javascript. Objects in Javascript are hashmaps, and have a JSON format.
-Note that functions are objects, hence the syntax for declaring a function is the same as creating an object.
+Objects in Javascript have a JSON format. As well as declaring attributes, you can also define the functions in object creation.
 
 <h3>Class creation:</h3>
 
