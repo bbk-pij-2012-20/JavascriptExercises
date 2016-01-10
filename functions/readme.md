@@ -1,7 +1,7 @@
 Javascript functions
 --
-
-<h4>hoisting</h4>
+<ul>
+<li><h4>hoisting</h4></li>
 
 When a function is declared/defined with the syntax: function doSomething(){..},
 it runs the risk of being overriden throughout the code (regardless of where the code is that calls
@@ -17,6 +17,6 @@ subsequent function can leave out the var: doSometing = function() {..}
 It is possible to also write var doSomething = function doSomething() {..}, but there's no point
 and the second doSomething is redundant.
 
-<h4>number of arguments != numbers of parameters</h4>
+<li><h4>number of arguments != numbers of parameters</h4></li>
 
 ..
