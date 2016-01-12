@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>Functions exercise#2: arguments & parameters</head></br>
+  <body>
+    -------------------------------------------------------------------------------------------------</br>
+    <h4>numbers of arguments &amp; parameters, part#1</h4>
+    A function biggerNumber is defined that takes two parameters (named param1 and param2).</br>
+    Some operation is carried out using these two parameters and returns a value accordingly.</br>
+    If you call the function and pass only 1 parameter, the result is undefined (because param2 is undefined).</br>
+    If you call the function and pass more than 2 parameters, the function still just uses the first two parameters (named param1 and param2).</br>
+    However, the function can access any parameter passed to it using the object 'argument' (see part#2).</br></br>
+    var getMax = function(param1, param2){</br></br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (param1 > param2) {</br></br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return param1;</br></br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} else {</br></br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return param2;</br></br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</br></br>
+    };</br></br>
+    console.log(getMax(10));&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;gives undefined</br>
+    console.log(getMax(10, 20));&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;gives 20, which is correct</br>
+    console.log(getMax(10, 20, 30));&nbsp;&nbsp;//&nbsp;gives 20, which is incorrect</br>
+
+    <script>
+
+      var getMax = function(param1, param2){
+
+        if (param1 > param2) {
+
+          return param1;
+
+        } else {
+
+          return param2;
+
+        }
+
+      };
+
+      console.log(getMax(10));
+      console.log(getMax(10, 20));
+      console.log(getMax(10, 20, 30));
+
+    </script>
+    -------------------------------------------------------------------------------------------------</br>
+    <h4>numbers of arguments &amp; parameters, part#2</h4>
+    The function can access any parameter passed to it using the object 'arguments':</br></br>
+    var getMax2 = function(){</br></br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var max = arguments[0];</br></br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (var i = 1; i < arguments.length; i++) {</br></br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (max < arguments[i]) {</br></br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;max = arguments[i];</br></br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</br></br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</br></br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return max;</br></br>
+    };</br></br>
+
+    console.log(getMax2(10));&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;gives undefined</br>
+    console.log(getMax2(10, 20));&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;gives 20, which is correct</br>
+    console.log(getMax2(10, 20, 30, 5, 56, 234, 2, 120));&nbsp;&nbsp;//&nbsp;gives 234, which is correct</br>
+
+    <script>
+
+      var getMax2 = function(){
+
+        var max = arguments[0];
+
+        for (var i = 1; i < arguments.length; i++) {
+
+          if (max < arguments[i]) {
+
+            max = arguments[i];
+
+          }
+
+        }
+
+        return max;
+
+      };
+
+      console.log(getMax2(10));
+      console.log(getMax2(10, 20));
+      console.log(getMax2(10, 20, 30, 5, 56, 234, 2, 120));
+
+    </script>
+
+  </body>
+</html>
