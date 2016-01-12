@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>Functions exercise#3: context objects, apply() and call()</head></br>
+  <body>
+    -------------------------------------------------------------------------------------------------</br>
+    <h4>context objects, part#1</h4>
+
+    apply() passes the context object as the first argument.</br>
+    It then expects any other arguments to be passed in an array (i.e. it is seen as an arguments object).</br>
+    This is useful if you have a collection, as opposed to discrete values.</br></br>
+
+    var showMe = function(n1, n2){</br></br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(this);</br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(n1 + " and " + n2);</br></br>
+    };</br></br>
+    showMe(99, 66);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;as expected, gives the window, and then 99 and 66</br>
+    showMe.<b>apply</b>("boo apply", <b>[99, 66]</b>));&nbsp;&nbsp;//&nbsp;gives the String array of "boo apply", and then gives 99 and 66</br>
+
+    <script>
+
+      var showMe = function(n1, n2){
+
+        console.log(this);
+        console.log(n1 + " and " + n2);
+
+      };
+
+      showMe(99, 66);
+      showMe.apply("boo apply", [99, 66]);
+
+    </script>
+    -------------------------------------------------------------------------------------------------</br>
+    <h4>context objects, part#2</h4>
+
+    call() also passes the context object as the first argument.</br>
+    However, it then expects subsequent arguments to be passed as discrete values, not in an array.</br></br>
+
+    var showMe = function(n1, n2){</br></br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(this);</br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(n1 + " and " + n2);</br></br>
+    };</br></br>
+    showMe(99, 66);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;as expected, gives the window, and then 99 and 66</br>
+    showMe.<b>call</b>("boo call", <b>99, 66</b>));&nbsp;&nbsp;//&nbsp;gives the String array of "boo call", and then gives 99 and 66</br>
+
+    <script>
+
+      var showMe = function(n1, n2){
+
+        console.log(this);
+        console.log(n1 + " and " + n2);
+
+      };
+
+      showMe(99, 66);
+      showMe.call("boo call", [99, 66]);
+
+    </script>
+
+  </body>
+</html>
