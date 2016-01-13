@@ -5,21 +5,28 @@
     -------------------------------------------------------------------------------------------------</br>
     <h4>Example#1: hoisting</h4>
 
-    function nutella(n){</br></br>
+    w3schools describes hoisting in terms of variable declarations that it says can be made after a variable  has been  used. </br></br>
+    However, I find that in Venkat's talk, his focus on hoisting is from the perspective of functions that share the same name - as I have mimicked below</br>
+    - and I find this striking because Javascript's behaviour is rather more counter-intuitive and therefore more pertinent for learning (how to not screw up in Javascript!)</br></br>
+    Specifically, if you use a variable without declaring (i.e. preceeded with var), and then assigning a different value to the same variable name <b>after using the variable</b>,</br>
+    Javascript still uses the value assigned earlier. This is </b>not</b> the case with functions, e.g. the function called nutella - defined on line 1 - is used on line 4, nutella is</br>
+    then redefined later (on line 5), before being used again (on line 8). It's striking then that both function calls (from lines 4 <b>and</b> 8) are to the latter function definition (on line 5).</br></br></br></br>
 
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log("Nutella has nuts numbering " + n);</br></br>
+    1:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function nutella(n){</br></br>
 
-    };</br></br>
+    2:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log("Nutella has nuts numbering " + n);</br></br>
 
-    nutella(10);&nbsp;//not as expected, gives the console.log() output of the 2nd function definition (below)</br></br>
+    3:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};</br></br>
 
-    function nutella(n){</br></br>
+    4:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nutella(10);&nbsp;&nbsp;&nbsp;//&nbsp;not as expected, gives the console.log() output of the 2nd function definition (below)</br></br></br></br>
 
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log("...but Nutella now has nuts numbering " + n);</br></br>
+    5:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function nutella(n){</br></br>
 
-    };</br></br>
+    6:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log("...but Nutella now has nuts numbering " + n);</br></br>
 
-    nutella(20);&nbsp;//as expected, gives the console.log() output of the 2nd function definition</br></br>
+    7:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};</br></br>
+
+    8:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nutella(20);&nbsp;&nbsp;&nbsp;//&nbsp;as expected, gives the console.log() output of the 2nd function definition</br></br></br></br>
 
     <script>
 
@@ -41,7 +48,7 @@
 
     </script>
     -------------------------------------------------------------------------------------------------</br>
-    <h4>Example#2: no hoisting with preferred syntax</h4>
+    <h4>Example#2: avoiding hoisting by using the preferred syntax of declaring the functions</h4>
 
       var nutella = function(n){</br></br>
 
@@ -49,7 +56,7 @@
 
       };</br></br>
 
-      nutella(10);&nbsp;//as expected, gives the console.log() output of the 1st function definition (above)</br></br>
+      nutella(10);&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;as expected, gives the console.log() output of the 1st function definition (above)</br></br>
 
       nutella = function(n){</br></br>
 
@@ -57,7 +64,7 @@
 
       };</br></br>
 
-      nutella(10);&nbsp;//as expected, gives the console.log() output of the 2nd function definition</br></br>
+      nutella(10);&nbsp;&nbsp;&nbsp;//&nbsp;as expected, gives the console.log() output of the 2nd function definition</br></br>
 
     <script>
 
@@ -87,7 +94,7 @@
 
     };</br></br>
 
-    nutella(10);&nbsp;//as expected, gives the console.log() output of the 1st function definition (above)</br></br>
+    nutella(10);&nbsp;&nbsp;&nbsp;//&nbsp;as expected, gives the console.log() output of the 1st function definition (above)</br></br>
 
     nutella = function nutella(n){</br></br>
 
@@ -95,7 +102,7 @@
 
     };</br></br>
 
-    nutella(10);&nbsp;//as expected, gives the console.log() output of the 2nd function definition</br></br>
+    nutella(10);&nbsp;&nbsp;&nbsp;//&nbsp;as expected, gives the console.log() output of the 2nd function definition</br></br>
 
     <script>
 
