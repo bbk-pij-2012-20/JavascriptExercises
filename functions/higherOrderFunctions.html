@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>Functions exercise#4: higher order functions</head></br>
+  <body>
+    -------------------------------------------------------------------------------------------------</br>
+    <h4>higher order functions, part#1</h4>
+    <ul>
+      <li>higher order functions are simply functions that take functions are parameters</li>
+      <li>any function can be made into a higher order function</li>
+      <li>in addition, Javascript has a number of ready-made higher order functions such as forEach() and filter()</li>
+      <li>the forEach() method can perform some operation - as defined by the function passed to it and defined therein on some collection</li>
+      <li>the collection can either be passed to the higher order function as a parameter or alternatively, it can be called on the collection</li>
+    </ul>
+
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var list = [1, 2, 3];</br></br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;list.forEach(function(element) {</br></br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(element);</br></br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});</br></br>
+    The function parameter that forEach() takes is a callback function (which specifies parameters: value, index, array)</br>
+    It returns a value for each element that the callback function's computation equates to true.</br>
+    So the output to console log is "forEach() outputs: 1" then "forEach() outputs: 2" then "forEach() outputs: 3", each on a new line. </br>
+    Although it returns 1,2,3 in one new array, it returns result of the computation one element at a time, due to the callback.</br>
+    </br>
+
+    <script>
+
+      var list = [1, 2, 3];
+
+      list.forEach(function(element) {
+
+        console.log("forEach() outputs: " + element);
+
+      });
+
+    </script>
+    -------------------------------------------------------------------------------------------------</br>
+    <h4>higher order functions, part#2</h4>
+    <ul>
+      <li>filter() is another higher order function.</li>
+      <li>like forEach(), it takes a callback function (which as before takes value, index, array parameters)</li>
+      <li>it returns a new array containing all the elements that the callback function returns a true result for</li>
+      <li>in this case, even numbers are returned by the anonymous callback function:</li>
+    </ul>
+
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];</br></br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  console.log(list.filter(function(element) {</br></br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return element % 2 == 0;</br></br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}));</br></br>
+    Output to console log is "forEach() outputs: 2,4,6,8,10"</br>
+    Notice that on this occasion, the console.log() is not in the body of the callback function</br>
+    but rather it takes the filter() function as its parameter, resulting in the print out of the complete, new array in one line.
+    <script>
+
+      var list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+      console.log("filter() outputs: " + list.filter(function(element) {
+
+          return element % 2 == 0;
+
+        }));
+
+    </script>
+
+  </body>
+</html>
