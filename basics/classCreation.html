@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <head>Basics exercise#7: Class creation</head></br>
+  <head>basics exercise#6: class creation</head></br>
   <body>
     -------------------------------------------------------------------------------------------------</br>
     <h4>Creating a class, part 1:</h4>
@@ -14,7 +14,7 @@
     a function called bike might look this:</br></br>
     var <u><b>b</b></u>ike = function()&nbsp;{</br></br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log("...calling the function bike()...");</br></br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</br></br></br></br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</br></br>
 
     bike();&nbsp;&nbsp;//&nbsp;calling the function</br>
     Bike();&nbsp;&nbsp;//&nbsp;this is syntactically similar to calling bike(). The difference is purely a semantic one and you shouldn't do it!</br></br>
@@ -47,13 +47,7 @@
     Apart from defining the constructor for the class (part 1), class creation should also include the declaration of the variable for the new class.</br>
     This is achieved by use of the keyword 'new':</br></br>
 
-    var bike = new Bike();</br></br>
-    This does 3 things:</br>
-    1.&nbsp;allocates memory for the instance bike</br>
-    2.&nbsp;it calls the call() method - Bike.call(bike); - hence passing bike as the context object to Bike's constructor</br>
-    3.&nbsp;assigns to the prototype: car.__proto__ = Car.prototype;</br></br>
-
-    For the purpose of demonstration only, you can explicitly execute no.2 to show the context object working:</br></br>
+    For the purpose of demonstration only, the following illustrates the action of call() and the context object working:</br></br>
     var Bike = function(model)&nbsp;{</br></br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log("...calling with parameter...");</br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.model = model;
@@ -91,7 +85,12 @@
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</br></br>
 
     var bike = new Bike("Cervelo");</br>
-    console.log(bike);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;gives { model: "Cervelo" }</br>
+    console.log(bike);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;gives { model: "Cervelo" }</br></br></br></br>
+
+    <b>var bike = new Bike()</b> does 3 things:</br></br>
+    1.&nbsp;allocates memory for the instance bike</br></br>
+    2.&nbsp;it calls the call() method - Bike.call(bike); - hence passing bike as the context object to Bike's constructor</br></br>
+    3.&nbsp;assigns to the prototype: car.__proto__ = Car.prototype;</br></br>
 
     <script>
 
