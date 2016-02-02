@@ -16,7 +16,26 @@
 
     In other words: Sets are shallow, gets are deep.</br></br>
 
-    console.log();&nbsp;&nbsp;&nbsp;&nbsp;// gives ..</br></br>
+    var Bike = function() {</br></br>
+
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log("..called Bike constructor..");</br></br>
+
+    }</br></br>
+
+    Bike.prototype.km = 0;</br></br>
+
+    Bike.prototype.pedal = function(km_travelled) {</br></br>
+
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log("..you're cycling.. ");</br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.km = this.km + km_travelled;&nbsp;&nbsp;//&nbsp;'this.km' on the right is taken from the prototype, 'this.km' on the left is set in the object.</br></br>
+
+    }</br></br>
+
+    var bike1 = new Bike();</br>
+    var bike2 = new Bike();</br>
+    bike1.pedal(20);&nbsp;&nbsp;//&nbsp;sets (shallow) km in bike1 object only</br>
+    console.log(bike1.km);&nbsp;&nbsp;//&nbsp;gives 20</br>
+    console.log(bike2.km);&nbsp;&nbsp;//&nbsp;gives 0</br>
 
     <script>
 
