@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>exercise#1: prototypes</head></br>
+  <body>
+    -------------------------------------------------------------------------------------------------</br>
+    <h4>prototypes</h4>
+
+    Every Javacript object has an internal property which is its protoype-object.</br>
+    If a property is requested from an object (e.g. using a getter), the property</br>
+    will be returned from that object. But if the object does not have that property</br>
+    then the property will be looked for in the object's prototype object. If it is </br>
+    not in the prototype object, then it will be looked for in the prototype object's</br>
+    prototype, and so on.</br></br>
+    On the other hand, if you assign a value to a property, that value will only be assigned</br>
+    to the object and not to its prototype.</br></br>
+
+    In other words: Sets are shallow, gets are deep.</br></br>
+
+    console.log();&nbsp;&nbsp;&nbsp;&nbsp;// gives ..</br></br>
+
+    <script>
+
+    var Bike = function() {
+
+      console.log("..called Bike constructor..");
+
+    }
+
+    Bike.prototype.km = 0;
+
+    Bike.prototype.pedal = function(km_travelled) {
+
+      console.log("..you're cycling.. ");
+      this.km = this.km + km_travelled;
+
+    }
+
+    var bike1 = new Bike();
+    var bike2 = new Bike();
+    bike1.pedal(20);
+    console.log("bike1 is now at: " + bike1.km);
+    console.log("bike2 is still at: " + bike2.km);
+
+    </script>
+    -------------------------------------------------------------------------------------------------</br>
+
+  </body>
+</html>
