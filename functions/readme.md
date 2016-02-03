@@ -1,8 +1,17 @@
 Javascript functions
 --
+<p>functions in Javascript are called "first class citizens". In programming languages, first class citizens is used to describe types, objects, value, entities (Wikipedia). In practice, this means that it supports operations such as being passed as an argument, being returned from a function and being assigned to a variable.
+All three of these operations can be performed with functions in Javascript. Hence, functions are objects,
+functions can be returned from other functions (i.e. callbacks), functions can be assigned to variables. </p>
 <ul>
 <li><h4>hoisting</h4></li>
 
+Roughly speaking, JS gets executed in the following order:
+<ol><li>Parse the scope and detect all function definitions</li>
+<li>Execute the code top-to-bottom with all functions found in step 1 available as variables</li></ul>
+This behavior is called 'hoisting' because it is almost like the function definitions have been 'hoisted' up to the top of the function. However, if the function is associated with an assignment, then it will not be subject to hoisting. (Based on maxogden on Github).
+
+(Based on Venkat talk:)
 When a function is declared/defined with the syntax: function doSomething(){..},
 it runs the risk of being overridden throughout the code (regardless of where the code is that calls
 it) if there is another function definition with the same name. This is called "hoisting", and it should
@@ -20,3 +29,9 @@ and the second doSomething is redundant.
 <li><h4>number of arguments != numbers of parameters</h4></li>
 
 In Javascript, you can pass any number of arguments to a function. The names of parameters declared in the function definition simply provides names for those arguments, which can then be referenced directly in the function body. However, the function can also reference any other arguments passed using the object arguments. Thus, if a function declares the names of two parameters, and if the function is called with more than 2 arguments, the function body can reference, for example, the third argument by using 'arguments[2]'.
+
+<li><h4>calling functions with the context object</h4></li>
+
+In Javascript, every function has two things: 1. the arguments object (mentioned above), and 2. the variable 'this'.
+
+'this' refers to the 'context object' and you can explicitly refer to a specific context object when calling a function by using either apply() or call().
