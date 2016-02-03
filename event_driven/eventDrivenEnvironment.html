@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>functions exercise#x: event-driven environment</head></br>
+  <body>
+  -------------------------------------------------------------------------------------------------</br>
+  var a = 1;</br>
+  console.log("this message won't get run again and again");</br></br>
+
+  $(document).ready(function() {</br></br>
+
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('button').on('click', function() {</br></br>
+
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert(a);</br></br>
+
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});</br></br>
+
+  });</br></br>
+
+  <p>The console log message is only produced once, not every time the button is clicked.</br>
+    Only the event-listener in the function is run each time the button is clicked.</br>
+    This is what's meant by javascript running in an event-driven environment.</br>
+Unlike PHP for example, the script is stored in memory and this is why Javascript execution is fast.</p>
+
+  <button>if you think the number one is sexy click this button. do it NOW!</button>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <script>
+    var a = 1;
+    console.log("this message won't get run again and again");
+
+    $(document).ready(function() {
+
+      $('button').on('click', function() {
+
+        alert(a);
+
+      });
+
+    });
+
+  </script>
+
+  </body>
+</html>
