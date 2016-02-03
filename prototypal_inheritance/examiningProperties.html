@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>exercise#2: examining properties</head></br>
+  <body>
+    -------------------------------------------------------------------------------------------------</br>
+    <h4>examining properties with for loop</h4>
+
+    var Bike = function(year) {</br></br>
+
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log("..called Bike constructor..");</br></br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.year = year;</br></br>
+
+    }</br></br>
+
+    Bike.prototype.km = 0;</br></br>
+
+    Bike.prototype.pedal = function(km_travelled) {</br></br>
+
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log("..you're cycling.. ");</br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.km = this.km + km_travelled;</br></br>
+
+    }</br></br>
+
+    var bike1 = new Bike(2016);</br></br>
+
+    for (var prop in bike1) {</br></br>
+
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(prop + " " + bike1[prop]);&nbsp;&nbsp;//&nbsp;loops through the properties of bike1, but this also includes the properties in its prototype (e.g. pedal())</br></br>
+
+    }</br></br>
+
+    var propName = 'year';&nbsp;&nbsp;//&nbsp;this is another way to get a property from the object.</br>
+    console.log(bike1[propName]);&nbsp;&nbsp;//&nbsp;square brackets as though a hashmap (i.e. name-value pair)</br>
+
+    <script>
+
+    var Bike = function(year) {
+
+      console.log("..called Bike constructor..");
+      this.year = year;
+
+    }
+
+    Bike.prototype.km = 0;
+
+    Bike.prototype.pedal = function(km_travelled) {
+
+      console.log("..you're cycling.. ");
+      this.km = this.km + km_travelled;
+
+    }
+
+    var bike1 = new Bike(2016);
+
+    for (var prop in bike1) {
+
+      console.log(prop + " " + bike1[prop]);
+
+    }
+
+    var propName = 'year';
+    console.log(bike1[propName]);
+
+    for (var prop in bike1) {
+
+      console.log(prop + " " + bike1.hasOwnProperty(prop));
+
+    }
+
+    console.log("having called the pedal() method with 20: "); 
+    bike1.pedal(20);
+
+    for (var prop in bike1) {
+
+      console.log(prop + " " + bike1.hasOwnProperty(prop));
+
+    }
+
+    </script>
+    -------------------------------------------------------------------------------------------------</br>
+
+  </body>
+</html>
