@@ -1,0 +1,78 @@
+lexical scoping
+<!DOCTYPE html>
+<html>
+  <head>basics exercise7: lexical scoping</head></br>
+  <body>
+    -------------------------------------------------------------------------------------------------</br>
+    <h4>lexical scoping, part#1</h4>
+
+    <script>
+      console.log("part 2");
+      var x = 1;
+      //parent scope
+      var scoobydoo = function() {
+        //child scope
+        var x = 2;
+        console.log("..from function, window.x : " + window.x);
+        console.log("..from function, this.x : " + this.x);
+        console.log("..from function, x: " + x);
+
+      }
+      console.log("..calling scoobydoo() function now..");
+      scoobydoo();
+      console.log("..from outside function, x: " + x);
+      console.log("..from outside function, this.x: " + this.x);
+      console.log("..from outside function, window.x: " + window.x);
+      console.log("..from outside function, scoobydoo.x: " + scoobydoo.x);
+
+    </script>
+
+    <h4>lexical scoping, part#2</h4>
+
+    <script>
+      console.log("part 2");
+      var x = 1;
+
+      var scoobydoo = function() {
+
+        x = 2;// often refered to as polluting the root scope..
+        console.log("..from function, window.x : " + window.x);
+        console.log("..from function, this.x : " + this.x);
+        console.log("..from function, x: " + x);
+
+      }
+      console.log("..calling scoobydoo() function now..");
+      scoobydoo();
+      console.log("..from outside function, x: " + x);
+      console.log("..from outside function, this.x: " + this.x);
+      console.log("..from outside function, window.x: " + window.x);
+      console.log("..from outside function, scoobydoo.x: " + scoobydoo.x);
+
+    </script>
+
+    <h4>lexical scoping - using scrict mode - part#3</h4>
+
+    <script>
+      console.log("part 3");
+      "use strict"; // forces reference to variable x from root scope to not see the variable of same name in the function's scope.
+//however this does not seem to give the error that I'm expecting.. not sure why..
+      var scoobydoo = function() {
+
+        x = 2;// often refered to as polluting the root scope..
+        console.log("..from function, window.x : " + window.x);
+        console.log("..from function, this.x : " + this.x);
+        console.log("..from function, x: " + x);
+
+      }
+
+      console.log("..calling scoobydoo() function now..");
+      scoobydoo();
+      console.log("..from outside function, x: " + x);
+      console.log("..from outside function, this.x: " + this.x);
+      console.log("..from outside function, window.x: " + window.x);
+      console.log("..from outside function, scoobydoo.x: " + scoobydoo.x);
+
+    </script>
+
+  </body>
+</html>
