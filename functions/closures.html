@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>functions exercise5: closures</head></br>
+  <body>
+  -------------------------------------------------------------------------------------------------</br>
+
+  $(document).ready(function() {</br></br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var n = 1;</br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('button').on('click', function() {</br></br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;n++;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert(n);</br></br>
+
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});</br></br>
+
+  });</br></br>
+
+  <p>the variable n is declared in a different scope from the event listener's alert</br>
+  Javascript notices that there is a reference made to n in the other scope.</br>
+  As a result, Javascript saves the variable n in a section of memory called a closure.</br>
+  Now the alert(n) and the n++ will continue to be able to access the variable albeit from</br>
+  a different scope</br>
+  </p>
+
+  <button>push the mouse button here, use your pinky</button>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <script>
+
+    $(document).ready(function() {
+
+      var n = 1;
+
+      $('button').on('click', function() {
+
+        n++;
+        alert(n);
+
+      });
+
+    });
+
+  </script>
+
+  </body>
+</html>
