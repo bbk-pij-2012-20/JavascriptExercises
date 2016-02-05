@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>basics exercise#9: context</head></br>
+  <body>
+    -------------------------------------------------------------------------------------------------</br>
+    <ul>
+    <li>All methods in Javascript have a context, which is the class in which they are.</li>
+    <li>The context object is accessed via 'this'</li>
+    <li>It is very useful to be able to associate a function with an object.</li>
+    <li>There are 3 methods that can change context: apply(), call() and bind()</li>
+    <h4>context, part#1</h4>
+
+    <b>apply()</b> passes the context object as the first argument.</br>
+    It then expects any other arguments to be passed in an array (i.e. it is seen as an arguments object).</br>
+    This is useful if you have a collection, as opposed to discrete values.</br></br>
+
+    var showMeThis = function(n1, n2){</br></br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(this);</br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(n1 + " and " + n2);</br></br>
+    };</br></br>
+    showMeThis(99, 66);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;as expected, gives window, and then 99 and 66</br>
+    showMeThis.<b>apply</b>("boo apply", <b>[99, 66]</b>));&nbsp;&nbsp;//&nbsp;gives the String array "boo apply", and then gives 99 and 66</br>
+
+    <script>
+
+      var showMeThis = function(n1, n2){
+
+        console.log(this);
+        console.log("this === window: ");
+        console.log(this === window);
+        console.log("this === boo apply ");
+        console.log(this === "boo apply");
+
+      };
+
+      showMeThis(99, 66);
+      console.log("this === window: ");
+      console.log(this === window);
+      showMeThis.apply("boo apply", [99, 66]);
+
+    </script>
+    -------------------------------------------------------------------------------------------------</br>
+    <h4>context, part#2</h4>
+
+    <b>call()</b> also passes the context object as the first argument.</br>
+    However, it then expects subsequent arguments to be passed as discrete values, not in an array.</br></br>
+
+    var showMeThis = function(n1, n2){</br></br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(this);</br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(n1 + " and " + n2);</br></br>
+    };</br></br>
+    showMeThis(99, 66);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;as expected, gives window, and then 99 and 66</br>
+    showMeThis.<b>call</b>("boo call", <b>99, 66</b>));&nbsp;&nbsp;//&nbsp;gives the String array "boo call", and then gives 99 and 66</br>
+
+    <script>
+
+      var showMeThis = function(n1, n2){
+
+        console.log(this);
+        console.log(n1 + " and " + n2);
+
+      };
+
+      showMeThis(99, 66);
+      showMeThis.call("boo call", 99, 66);
+
+    </script>
+    -------------------------------------------------------------------------------------------------</br>
+    <h4>context, part#3</h4>
+
+    <b>bind()</b> also passes the context object as the first argument.</br>
+    However, it then expects subsequent arguments to be passed as discrete values, not in an array.</br></br>
+
+    var showMeThis = function(n1, n2){</br></br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(this);</br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(n1 + " and " + n2);</br></br>
+    };</br></br>
+    showMeThis(99, 66);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;as expected, gives the window, and then 99 and 66</br>
+    showMeThis.<b>call</b>("boo call", <b>99, 66</b>));&nbsp;&nbsp;//&nbsp;gives the String array of "boo call", and then gives 99 and 66</br>
+
+    <script>
+
+      var obj = {
+
+          showMeThis : function(n1, n2){
+
+            console.log(this);
+            console.log(n1 + " and " + n2);
+
+          };
+
+      }
+
+      showMeThis(99, 66);
+      showMeThis.call("boo call", [99, 66]);
+
+    </script>
+
+  </body>
+</html>
