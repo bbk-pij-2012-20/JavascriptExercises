@@ -2,7 +2,7 @@
 
 Node.js has its own module loading system.
 
-You can specify which functions in your js file you want to be exported in one of two ways:
+You can specify which functions in your js file you want to be available for use in other js files in one of two ways:
 
 <ul>
 either
