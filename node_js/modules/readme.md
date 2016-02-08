@@ -13,5 +13,5 @@ or
   <li>prefix the functions you want to export with 'export.''</li>
 </ul>
 
-Whichever other js file wishing to use those functions can do so with Node's require() function.
-The module in which the function(s) reside must be passed as argument, prefixed with its relative path, to require().
+Whichever other js file wishing to use those functions can do so with Node's require( ) function.
+The module in which the function(s) reside must be passed as argument, prefixed with its relative path, to require( ).
