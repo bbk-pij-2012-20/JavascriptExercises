@@ -8,6 +8,7 @@ either
 <ul>
   <li>assign each function you want to export to a module.exports.variablename</li>
 </ul>
+or
 <ul>
   <li>prefix the functions you want to export with export.</li>
 </ul>
