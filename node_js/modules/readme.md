@@ -13,5 +13,5 @@ or
   <li>prefix the functions you want to export with 'export.''</li>
 </ul>
 
-In the js file that needs import the modules' functions, the exported module must be passed as an argument to Node's require() function.
-The exported module must be prefixed with its relative path.
+Whichever other js file wishing to use those functions can do so with Node's require() function.
+The module in which the function(s) reside must be passed as argument, prefixed with its relative path, to require().
