@@ -9,5 +9,3 @@ var getHappy = function() {
   console.log("..getting happy..");
 
 }
-
-//module.exports.fun = haveFun;
