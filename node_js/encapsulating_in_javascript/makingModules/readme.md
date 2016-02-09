@@ -2,9 +2,14 @@
 
 Node.js has its own module loading system.
 
-You can specify which functions in your js file you want to be available for use in other js files in one of two ways:
+In every js file you create, node generates a module.exports object, which is empty unless you specify otherwise. Thus, the unseen code is 'module.exports = {}'
+You can specify which functions in your js file you want to be available for use in other js files in one of three ways:
 
 either
+<ul>
+  <li>include the functions to export inside the module.exports object (and you can export other types of variables as well, not just functions)</li>
+</ul>
+or
 <ul>
   <li>assign each function you want to export to 'module.exports.variablename'</li>
 </ul>

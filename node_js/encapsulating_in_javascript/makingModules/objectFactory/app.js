@@ -1,0 +1,2 @@
+require('./ligament');
+require('./meniscus');
