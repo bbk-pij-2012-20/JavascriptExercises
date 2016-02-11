@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <% include templates/header.ejs%>
+    <h1><%= title %></h1>
+    <p><%= title %> is learning Express and EJS template engine</p>
+    <!-- so instead of putting javascript scripts inside script elements you use the percentage equals element syntax -->
+    <p>those two local variables are referenced here:
+      <%= nameOfVariable %> and <%= var2 %>
+    </p>
+    <p>
+      <ul>
+        <% for (i = 0; i < 5; i++) { %>
+          <li>crazy template fun, list number <%= i %></li></br>
+        <% } %>
+      </ul>
+    </p>
+    <p>not forgetting that third local variable, the 50 line json file:
+      <h3><%= pracJson.categoryName %></h3>
+      <ul>
+
+        <% myJsonFile.categories.forEach(function(temporaryVariable) { %>
+
+          <li><a href="<%=urlNB%><%=queryStrFood%><%=temporaryVariable.categoryID%>"><%= temporaryVariable.categoryName %></a></li>
+
+        <% }); %>
+
+      </ul>
+    </p>
+  </body>
+</html>
