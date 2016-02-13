@@ -8,6 +8,9 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
+var $ = require('jquery')(require("jsdom").jsdom().parentWindow);
+//var $ = require('jquery')(window);
+
 var app = express();
 
 // view engine setup
