@@ -35,3 +35,9 @@ In Javascript, you can pass any number of arguments to a function. The names of 
 In Javascript, every function has two things: 1. the arguments object (mentioned above), and 2. the variable 'this'.
 
 'this' refers to the 'context object' and you can explicitly refer to a specific context object when calling a function by using either apply() or call().
+
+<li><h4>callbacks</h4></li>
+
+The Javascript runtime is single-threaded. Hence a Javascript engine like V8 has only one callstack.
+A single-threaded language is susceptible to long delays, via blocking of the execution of subsequent code (particularly debilitating where a line of code is waiting on an I/O). However, web browsers surmount this problem, under the hood, with other threads which include the Web APIs (or C++ APIs in Node.js). The Web APIs makes use of event loops and callback queues. These other threads cannot be manipulated directly by the developer. The Javascript developer can only interact with them indirectly, using callbacks. As such, the mechanics of concurrency are essentially done for you.
+To enact a callback, you pass the name of a function as a parameter to another function. If you do not want it to behave as a callback, you pass the name of a function with parentheses to the function. 
