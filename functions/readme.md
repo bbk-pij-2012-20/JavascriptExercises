@@ -20,7 +20,7 @@ be avoided because it is counter-intuitive and has no benefit.
 
 In order to define the same function name differently on subsequent lines in a script without hoisting, you should
 define the method with the following syntax instead: var doSomething = function() {..}, the
-subsequent function can leave out the var: doSometing = function() {..}
+subsequent function can leave out the var: doSomething = function() {..}
 
 
 It is possible to also write var doSomething = function doSomething() {..}, but there's no point
@@ -43,3 +43,28 @@ A single-threaded language is susceptible to long delays, via blocking of the ex
 To enable a callback to occur, you pass the name of a function as a parameter to another function. If you do not want it to behave as a callback, you pass the name of a function with parentheses to the function (I'm not 100% sure about this though).
 
 The WebAPI will then place the function in a task queue (this is the callback queue). When it observes the runtime callstack to be empty, the event loop kicks in and performs its role of taking the callback from the queue and putting it on the runtime engine callstack to be executed.
+
+Callbacks are sometimes loosely (and inaccurately) defined as:
+<ul>
+<li>any function that another function calls</li>
+But more accurately callbacks are:
+<li>any function that another function calls <b>asynchronously</b> - meaning the callback function will be pushed onto the callback queue at some point in the future.
+The former (i.e. a synchronous callback) would look like:
+
+[1,2,3,4].forEach(function(i) {
+  console.log(i);
+});
+
+It will sit and block the callstack.
+
+Whereas the latter (i.e. an asynchronous callback) would look like:
+
+function asyncForEach(array, cb) {
+  array.forEach(function() {
+    setTimeout(cb, 0);
+  });  
+}
+
+asynForEach([1,2,3,4], function(i) {
+  console.log(i);
+}
