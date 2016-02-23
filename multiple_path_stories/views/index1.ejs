@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <a href="http://www.google.com">Back to the start</a>
+    <div class = "storyForm">
+    <form action = "/process?form=storyForm" method = "post">
+      <table border="1" style="width:50%">
+        <tr>
+          <td></td>
+          <td id = "0x1">
+              <a href="http://www.google.com"><%=postingUserInput%></a>
+          </td>
+          <td></td>
+        </tr>
+        <tr>
+          <td id = "1x0">
+            <input type = "text" name = "input1x0"></input>
+            <input type = "submit" value = "submit" />
+          </td>
+          <td id = "1x1">This is a different story page</td>
+          <td id = "1x2">
+            <input type = "text" name = "input1x2"></input>
+            <input type = "submit" value = "submit" />
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td id = "2x1">
+            <input type = "text" name = "input2x1"></input>
+            <input type = "submit" value = "submit" />
+          </td>
+          <td></td>
+        </tr>
+      </table>
+    </form>
+  </div>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+  </body>
+</html>

@@ -6,7 +6,8 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
-var users = require('./routes/users');
+
+//var users = require('./routes/users');
 
 var $ = require('jquery')(require("jsdom").jsdom().parentWindow);
 //var $ = require('jquery')(window);
@@ -26,7 +27,20 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
-app.use('/users', users);
+//app.use('/users', users);
+
+app.post('/process', function(req, res) {
+  var usersFormInput = req.body.inputzero1;
+  res.render('index1', {
+     postingUserInput : usersFormInput
+  });
+});
+
+app.use('jquery', express.static(__dirname + '/node_modules/jquery/dist/'));
+
+//app.get('/jquery/jquery.js', function(req, res) {
+//    res.sendfile(__dirname + '/node_modules/jquery/dist/jquery.min.js');
+//});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -58,6 +72,5 @@ app.use(function(err, req, res, next) {
     error: {}
   });
 });
-
 
 module.exports = app;
