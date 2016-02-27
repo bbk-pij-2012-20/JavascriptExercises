@@ -1,8 +1,7 @@
-<h4>Multiple path stories</h4>
+<h4>web application with no client-side javascript</h4>
 
 
-This exercise is to reproduce the simple web application as viewable in
-the demo video: (http://oneis-recruitment.s3.amazonaws.com/2014/stories-web-app.mp4)
+This exercise is to reproduce the simple web application that allows the user to build 'multiple path stories', as in this demo video: (http://oneis-recruitment.s3.amazonaws.com/2014/stories-web-app.mp4)
 
 
 The exercise is to write the app without any client-side javascript.
