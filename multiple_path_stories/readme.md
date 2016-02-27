@@ -1,8 +1,6 @@
 <h4>web application with no client-side javascript</h4>
 
-
-This exercise is to reproduce the simple web application that allows the user to build 'multiple path stories', as in this demo video: (http://oneis-recruitment.s3.amazonaws.com/2014/stories-web-app.mp4)
-
+This exercise is to produce a simple web application, that allows the user to build 'multiple path stories'.
 
 The exercise is to write the app without any client-side javascript.
 
@@ -11,7 +9,8 @@ Thus I am using express.js middleware, running on a node.js server,
 All the code is written in javascript.
 
 I am using EJS for the view templating engine.
-(There is no requirement for persistence or further format styling of UI.)
+
+(There is no requirement for persistence or further format styling of UI beyond a simple table grid and button format).
 
 --
 
