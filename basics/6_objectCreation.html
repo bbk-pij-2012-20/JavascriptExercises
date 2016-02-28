@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>basics exercise#5: object creation</head></br>
+  <body>
+    -------------------------------------------------------------------------------------------------</br>
+    <h4>Creating example object: a person with attributes (name & age) and behaviour (writing javascript)</h4></br>
+    var person = {</br></br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;age : 54,</br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name : "Brendan Eich"</br></br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;writeJavascript : function() {</br></br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log("...writing Javascript...");</br></br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</br></br>
+    };</br></br></br>
+    console.log(person.age);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// gives person's age</br>
+    console.log(person.name);&nbsp;&nbsp;&nbsp;&nbsp;// gives person's name</br>
+    person.writeJavascript());&nbsp;&nbsp;&nbsp;&nbsp;// calls Brendan's behaviour - writeJavascript()</br>
+
+    <script>
+
+      var person = {
+
+            age : 54,
+            name : "Brendan Eich",
+
+            writeJavascript : function() {
+
+                console.log("...writing Javascript...");
+
+            }
+
+      };
+
+      console.log("person's age is " + person.age);
+      console.log("person's name is " + person.name);
+      console.log(person.name + " is ...");
+      person.writeJavascript();
+
+    </script>
+
+  </body>
+</html>

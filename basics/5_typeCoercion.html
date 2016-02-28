@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>basics exercise#4: type coercion</head></br>
+  <body>
+    -------------------------------------------------------------------------------------------------</br>
+    <h4>double equals, ==, performs type conversion (prior to comparison)</h4>
+    console.log(1 == 1.0);&nbsp;&nbsp;&nbsp;&nbsp;// gives true</br></br>
+    console.log("1" == 1);&nbsp;&nbsp;&nbsp;&nbsp;// gives true</br></br>
+    console.log(1 == "1.0");&nbsp;&nbsp;&nbsp;&nbsp;// gives true</br></br>
+    console.log("1" == "1.0");&nbsp;&nbsp;&nbsp;&nbsp;// gives false</br></br>
+
+    <script>
+
+    console.log('double equals:');
+    console.log(1 == 1.0);
+    console.log("1" == 1);
+    console.log(1 == "1.0");
+    console.log("1" == "1.0");
+
+
+    </script>
+    -------------------------------------------------------------------------------------------------</br>
+    <h4>triple equals, ===, compares types as well as values. Always aim to use this instead of == to avoid generating bugs.</h4>
+    console.log(1 === 1.0);&nbsp;&nbsp;&nbsp;&nbsp;// gives true. Note that Javascript only has one type for all numbers, namely a 64-bit Floating Point number.</br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// (It is not like Java which has short, long, integer, float and double).</br>
+    console.log("1" === 1);&nbsp;&nbsp;&nbsp;&nbsp;// gives false</br></br>
+    console.log(1 === "1.0");&nbsp;&nbsp;&nbsp;&nbsp;// gives false</br></br>
+    console.log("1" === "1.0");&nbsp;&nbsp;&nbsp;&nbsp;// gives false</br></br>
+
+    <script>
+
+    console.log('triple equals:');
+    console.log(1 === 1.0);
+    console.log("1" === 1);
+    console.log(1 === "1.0");
+    console.log("1" === "1.0");
+
+    </script>
+
+  </body>
+</html>

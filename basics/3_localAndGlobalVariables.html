@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>basics exercise#2: local & global variables</head></br>
+  <body>
+    -------------------------------------------------------------------------------------------------</br>
+    <h3>METHOD#1:</h3>
+    var method1 = function() {</br></br>
+    &nbsp;&nbsp;var n = 10;</br>
+    &nbsp;&nbsp;console.log(n);</br></br>
+    }</br></br>
+    method1() // gives 10</br>
+    console.log(n) // gives ReferenceError because n was declared with var inside the method so it is local to the method.</br></br>
+
+    <script>
+
+      var method1 = function() {
+
+        var n = 10;
+        console.log(n);
+
+      }
+
+      console.log("method1(): ");
+      method1();
+      console.log(n);
+
+    </script>
+    -------------------------------------------------------------------------------------------------</br>
+    <h3>METHOD#2:</h3>
+    var method2 = function() {</br></br>
+    &nbsp;&nbsp;var n = 10;</br>
+    &nbsp;&nbsp;n2 = 100;</br>
+    &nbsp;&nbsp;console.log(n);</br></br>
+    &nbsp;&nbsp;console.log(n2);</br></br>
+    }</br></br>
+    method2() // gives 10 and 100</br>
+    console.log(n2) // gives 100 because n2 was not declared with var, so n2 is a global variable.</br></br>
+    console.log(n) // gives ReferenceError because n was declared with var inside the method so it is local to the method.</br></br>
+
+    <script>
+
+      var method2 = function() {
+
+        var n = 10;
+        n2 = 100;
+        console.log(n);
+        console.log(n2);
+
+      }
+
+      console.log("method2(): ");
+      method2();
+      console.log(n2);
+      console.log(n);
+
+    </script>
+
+    -------------------------------------------------------------------------------------------------</br>
+  </body>
+</html>
