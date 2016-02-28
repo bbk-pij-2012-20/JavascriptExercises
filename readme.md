@@ -6,27 +6,33 @@ This repo includes a bunch of Javascript that I have written to help me learn Ja
 In order to run the code using a browser's Javascript engine, the javascript is embedded in html files. The code itself is duplicated within html tags so that it is immediately visible from the browser.
 
 Venkat's talk covered some aspects of the basics of Javascript, as well as functions, object creation, class creation and prototypal inheritance.
-<ul>
-<b><li>basics</li></b>
 
-<li>exercise#1: semi-colons</li>
-<li>exercise#2: local & global variables</li>
-<li>exercise#3: lexical scoping</li>
-<li>exercise#4: type coercion</li>
-<li>exercise#5: object creation</li>
-<li>exercise#6: class creation</li>
+<b>basics</b>
+<ol>
+<li>semi-colons</li>
+<li>importing external js files</li>
+<li>local & global variables</li>
+<li>lexical scoping</li>
+<li>type coercion</li>
+<li>object creation</li>
+<li>class creation</li>
+<li>dynamic & weak type checking
+<li>context</li>
+</ol>
 
-<b><li>functions</li></b>
+<b>functions</b>
+<ol>
+  <li>hoisting</li>
+  <li>arguments & parameters</li>
+  <li>context objects, apply() and call()</li>
+  <li>higher order functions</li>
+  <li>closures</li>
+</ol>
 
-<li>exercise#1: hoisting</li>
-<li>exercise#2: arguments & parameters</li>
-<li>exercise#3: context objects, apply() and call()</li>
-<li>exercise#4: higher order functions</li>
-<li>exercise#5: closures</li>
-
-<b><li>prototypal_inheritance</li></b>
-<li>exercise#1: prototypes</li>
-<li>exercise#2: examining properties</li>
-</ul>
+<b>prototypal_inheritance</b>
+<ol>
+  <li>prototypes</li>
+  <li>examining properties</li>
+</ol>
 
 Closures, call backs and event driven were not mentioned. The code I wrote for these topics were informed by talks by .. (again youtube).
