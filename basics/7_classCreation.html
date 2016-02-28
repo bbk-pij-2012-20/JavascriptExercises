@@ -42,7 +42,7 @@
     </script>
     -------------------------------------------------------------------------------------------------</br>
     <h4>Creating a class, part 2:</h4>
-    <h4>use of keyword new</h4>
+    <h4>demonstrating what keyword new does (by explicit use of call())</h4>
 
     Apart from defining the constructor for the class (part 1), class creation should also include the declaration of the variable for the new class.</br>
     This is achieved by use of the keyword 'new':</br></br>
@@ -76,7 +76,7 @@
     </script>
     -------------------------------------------------------------------------------------------------</br>
     <h4>Creating a class, part 3:</h4>
-    <h4>use of keyword new, with properties</h4>
+    <h4>showing use of keyword new</h4>
 
     var Bike = function(model)&nbsp;{</br></br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log("...calling with parameter...");</br>
@@ -90,7 +90,7 @@
     <b>var bike = new Bike()</b> does 3 things:</br></br>
     1.&nbsp;allocates memory for the instance bike</br></br>
     2.&nbsp;it calls the call() method - Bike.call(bike); - hence passing bike as the context object to Bike's constructor</br></br>
-    3.&nbsp;assigns to the prototype: car.__proto__ = Car.prototype;</br></br>
+    3.&nbsp;assigns to the prototype: bike.__proto__ = Bike.prototype;</br></br>
 
     <script>
 
