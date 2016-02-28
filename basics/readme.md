@@ -46,6 +46,6 @@ A dynamically-typed language like Javascript is also sometimes described as bein
 Is a poorly-defined description of how strictly a language permits type conversions. Javascript is relatively weakly-typed, as is C, while Haskell and Java are strongly-typed.
 
 <li><h4>context:</h4></li>
-
+</ol>
 Every javascript file has a context object. The context object is Window by default but changes for properties and objects that are defined within an object. In that scenario, the context object of these is the object in which they are defined.</br>
 The context can be explicitly changed by use of the functions apply(), call() and bind(). These are predefined javascript functions that any javascript functions will automatically have available to it. The context object of choice is passed as the first parameter.
